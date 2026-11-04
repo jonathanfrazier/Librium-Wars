@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "description": "Canonical image placement IDs. Placeholder only; source images have not been uploaded.",
-  "slotCount": 52,
+  "slotCount": 59,
   "slots": [
     {
       "id": "home-hero",
@@ -364,6 +364,55 @@
       "id": "social-insurance-finance-hands",
       "page": "/social-orders/",
       "purpose": "insurance-finance-hands illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "religions-cover",
+      "page": "/religions/",
+      "purpose": "Six Religions panoramic cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "religion-grokobite",
+      "page": "/religions/",
+      "purpose": "grokobite portrait or religious symbol",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "religion-claudite",
+      "page": "/religions/",
+      "purpose": "claudite portrait or religious symbol",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "religion-gptist",
+      "page": "/religions/",
+      "purpose": "gptist portrait or religious symbol",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "religion-technophile",
+      "page": "/religions/",
+      "purpose": "technophile portrait or religious symbol",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "religion-klingist",
+      "page": "/religions/",
+      "purpose": "klingist portrait or religious symbol",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "religion-neoist",
+      "page": "/religions/",
+      "purpose": "neoist portrait or religious symbol",
       "assetPath": null,
       "status": "awaiting-image"
     }
