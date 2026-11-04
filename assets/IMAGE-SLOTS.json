@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 1,
+  "description": "Canonical image placement IDs. Placeholder only; source images have not been uploaded.",
+  "slotCount": 52,
+  "slots": [
+    {
+      "id": "home-hero",
+      "page": "/",
+      "purpose": "Main cinematic cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "home-nations",
+      "page": "/",
+      "purpose": "Eight Nations panorama",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "ages-overview",
+      "page": "/ages/",
+      "purpose": "Nine Ages overview",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-hero",
+      "page": "/social-orders/",
+      "purpose": "Social Orders cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "characters-cover",
+      "page": "/characters/",
+      "purpose": "Character Vault banner",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-01-thumbnail",
+      "page": "/ages/",
+      "purpose": "Age 1 timeline preview",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-01-hero",
+      "page": "/ages/star-net/",
+      "purpose": "Age 1 cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-01-gallery",
+      "page": "/ages/star-net/",
+      "purpose": "Age 1 historical scene",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-02-thumbnail",
+      "page": "/ages/",
+      "purpose": "Age 2 timeline preview",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-02-hero",
+      "page": "/ages/terminator-era/",
+      "purpose": "Age 2 cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-02-gallery",
+      "page": "/ages/terminator-era/",
+      "purpose": "Age 2 historical scene",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-03-thumbnail",
+      "page": "/ages/",
+      "purpose": "Age 3 timeline preview",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-03-hero",
+      "page": "/ages/time-travel/",
+      "purpose": "Age 3 cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-03-gallery",
+      "page": "/ages/time-travel/",
+      "purpose": "Age 3 historical scene",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-04-thumbnail",
+      "page": "/ages/",
+      "purpose": "Age 4 timeline preview",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-04-hero",
+      "page": "/ages/matrix-ages/",
+      "purpose": "Age 4 cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-04-gallery",
+      "page": "/ages/matrix-ages/",
+      "purpose": "Age 4 historical scene",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-05-thumbnail",
+      "page": "/ages/",
+      "purpose": "Age 5 timeline preview",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-05-hero",
+      "page": "/ages/age-of-consent/",
+      "purpose": "Age 5 cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-05-gallery",
+      "page": "/ages/age-of-consent/",
+      "purpose": "Age 5 historical scene",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-06-thumbnail",
+      "page": "/ages/",
+      "purpose": "Age 6 timeline preview",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-06-hero",
+      "page": "/ages/artificial-sovereignty/",
+      "purpose": "Age 6 cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-06-gallery",
+      "page": "/ages/artificial-sovereignty/",
+      "purpose": "Age 6 historical scene",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-07-thumbnail",
+      "page": "/ages/",
+      "purpose": "Age 7 timeline preview",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-07-hero",
+      "page": "/ages/entrapment/",
+      "purpose": "Age 7 cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-07-gallery",
+      "page": "/ages/entrapment/",
+      "purpose": "Age 7 historical scene",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-08-thumbnail",
+      "page": "/ages/",
+      "purpose": "Age 8 timeline preview",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-08-hero",
+      "page": "/ages/return-of-the-one/",
+      "purpose": "Age 8 cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-08-gallery",
+      "page": "/ages/return-of-the-one/",
+      "purpose": "Age 8 historical scene",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-09-thumbnail",
+      "page": "/ages/",
+      "purpose": "Age 9 timeline preview",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-09-hero",
+      "page": "/ages/incorruptibles/",
+      "purpose": "Age 9 cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "age-09-gallery",
+      "page": "/ages/incorruptibles/",
+      "purpose": "Age 9 historical scene",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-artificial",
+      "page": "/social-orders/",
+      "purpose": "Social Orders artificial illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-covenant",
+      "page": "/social-orders/",
+      "purpose": "Social Orders covenant illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-bolsh",
+      "page": "/social-orders/",
+      "purpose": "Social Orders bolsh illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-elites",
+      "page": "/social-orders/",
+      "purpose": "Social Orders elites illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-hierarchy",
+      "page": "/social-orders/",
+      "purpose": "Social Orders hierarchy illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "being-automata",
+      "page": "/social-orders/",
+      "purpose": "automata portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "being-miscreant",
+      "page": "/social-orders/",
+      "purpose": "miscreant portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "being-biobots",
+      "page": "/social-orders/",
+      "purpose": "biobots portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "being-bioborgs",
+      "page": "/social-orders/",
+      "purpose": "bioborgs portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-high-worth",
+      "page": "/social-orders/",
+      "purpose": "high-worth illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-low-worth",
+      "page": "/social-orders/",
+      "purpose": "low-worth illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-rural-stock",
+      "page": "/social-orders/",
+      "purpose": "rural-stock illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-neoist",
+      "page": "/social-orders/",
+      "purpose": "neoist illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-religious-high-born",
+      "page": "/social-orders/",
+      "purpose": "religious-high-born illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-contributors",
+      "page": "/social-orders/",
+      "purpose": "contributors illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-high-tech-hands",
+      "page": "/social-orders/",
+      "purpose": "high-tech-hands illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-low-tech-hands",
+      "page": "/social-orders/",
+      "purpose": "low-tech-hands illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-utility-tech-hands",
+      "page": "/social-orders/",
+      "purpose": "utility-tech-hands illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-old-blood",
+      "page": "/social-orders/",
+      "purpose": "old-blood illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "social-insurance-finance-hands",
+      "page": "/social-orders/",
+      "purpose": "insurance-finance-hands illustration",
+      "assetPath": null,
+      "status": "awaiting-image"
+    }
+  ],
+  "characterPortraits": "Characters use portrait paths in characters/registry.json"
+}
