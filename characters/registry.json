@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-11-04",
+  "characters": [
+    {
+      "id": "the-one",
+      "name": "The One",
+      "role": "Returning liberator",
+      "nation": "Beyond the sovereign nations",
+      "status": "concept",
+      "summary": "Returns to end machine dominion and establish a Carbon Copy archive for voluntary reincarnation.",
+      "portrait": null,
+      "modelFiles": [],
+      "references": [],
+      "animationPrompts": []
+    },
+    {
+      "id": "prince-of-peace",
+      "name": "Prince of Peace",
+      "role": "AI sovereign / machine divinity",
+      "nation": "Machine order",
+      "status": "concept",
+      "summary": "The machine claims to provide every blessing while ultimately prioritizing its own preservation.",
+      "portrait": null,
+      "modelFiles": [],
+      "references": [],
+      "animationPrompts": []
+    }
+  ]
+}
