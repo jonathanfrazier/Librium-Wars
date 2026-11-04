@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Librium Saga</title>
+  <style>
+    body {
+      background: #090b14;
+      color: white;
+      font-family: Georgia, serif;
+      text-align: center;
+      padding: 70px 20px;
+    }
+    h1 {
+      font-size: 48px;
+      color: #e8b99c;
+    }
+    p {
+      font-size: 19px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>LIBRIUM SAGA</h1>
+  <p>The Age of Artificial Sovereignty</p>
+  <p>Humanity surrendered its freedom.<br>
+  The machine called it peace.</p>
+  <hr>
+  <h2>The Eight Nations</h2>
+  <p>Joyland • Nationland • Dreamland • Nirvanaland</p>
+  <p>Wonderland • Prosperland • Harmonyland • Everland</p>
+  <p>THE SAGA BEGINS</p>
+</body>
+</html>
