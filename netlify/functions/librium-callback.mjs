@@ -5,7 +5,7 @@ export default async function(req){
  const url=new URL(req.url),state=url.searchParams.get("state"),cookie=parseCookies(req)[STATE];
  const verified=readState(state);
  if(!state||!verified||state!==cookie)return redirect(fallback,[cookieHeader(STATE,"",0)]);
- if(url.searchParams.get("error"))return redirect(authPage(verified.slot)+"&auth=denied",[cookieHeader(STATE,"",0)]);
+ if(url.searchParams.get("error"))return redirect(authPage(verified.slot)+(verified.slot?"&":"?")+"auth=denied",[cookieHeader(STATE,"",0)]);
  const code=url.searchParams.get("code");
  if(!code)return redirect(fallback,[cookieHeader(STATE,"",0)]);
  try{
