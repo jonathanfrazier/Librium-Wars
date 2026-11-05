@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "description": "Canonical website image placements. Completed image paths are stored alongside remaining missing placeholders.",
-  "slotCount": 92,
+  "slotCount": 107,
   "slots": [
     {
       "id": "home-hero",
@@ -702,6 +702,111 @@
       "id": "nation-everland-life",
       "page": "/nations/everland/",
       "purpose": "everland daily life",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-the-one-portrait",
+      "page": "/characters/",
+      "purpose": "The One character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-prince-of-peace-portrait",
+      "page": "/characters/",
+      "purpose": "Prince of Peace character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-r567-portrait",
+      "page": "/characters/",
+      "purpose": "R567 character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-joyland-media-bot-portrait",
+      "page": "/characters/",
+      "purpose": "Joyland Official Media Bot character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-xardan-portrait",
+      "page": "/characters/",
+      "purpose": "Xardan character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-xachel-portrait",
+      "page": "/characters/",
+      "purpose": "Xachel character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-zon-portrait",
+      "page": "/characters/",
+      "purpose": "Zon character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-xade-portrait",
+      "page": "/characters/",
+      "purpose": "Xade character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-xaphine-portrait",
+      "page": "/characters/",
+      "purpose": "Xaphine character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-zamie-portrait",
+      "page": "/characters/",
+      "purpose": "Zamie character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-zevelyn-portrait",
+      "page": "/characters/",
+      "purpose": "Zevelyn character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-zatilda-portrait",
+      "page": "/characters/",
+      "purpose": "Zatilda character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-zanikka-portrait",
+      "page": "/characters/",
+      "purpose": "Zanikka character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-zirginia-portrait",
+      "page": "/characters/",
+      "purpose": "Zirginia character portrait",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "character-zironika-rx677-portrait",
+      "page": "/characters/",
+      "purpose": "Zironika-RX677 character portrait",
       "assetPath": null,
       "status": "awaiting-image"
     }
