@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "description": "Canonical image placement IDs. Placeholder only; source images have not been uploaded.",
+  "description": "Canonical website image placements. Completed image paths are stored alongside remaining missing placeholders.",
   "slotCount": 92,
   "slots": [
     {
@@ -427,22 +427,28 @@
       "id": "nation-joyland-thumbnail",
       "page": "/nations/",
       "purpose": "joyland thumbnail",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/joyland-taipei.webp",
+      "status": "published",
+      "imageSubject": "Present-day Taipei, Taiwan skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-joyland-hero",
       "page": "/nations/joyland/",
       "purpose": "joyland national cover",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/joyland-taipei.webp",
+      "status": "published",
+      "imageSubject": "Present-day Taipei, Taiwan skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-joyland-city",
       "page": "/nations/joyland/",
       "purpose": "joyland cityscape — city not yet named",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/joyland-taipei.webp",
+      "status": "published",
+      "imageSubject": "Present-day Taipei, Taiwan skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-joyland-life",
@@ -455,22 +461,28 @@
       "id": "nation-nationland-thumbnail",
       "page": "/nations/",
       "purpose": "nationland thumbnail",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/nationland-stockholm.webp",
+      "status": "published",
+      "imageSubject": "Present-day Stockholm, Sweden skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-nationland-hero",
       "page": "/nations/nationland/",
       "purpose": "nationland national cover",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/nationland-stockholm.webp",
+      "status": "published",
+      "imageSubject": "Present-day Stockholm, Sweden skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-nationland-city",
       "page": "/nations/nationland/",
       "purpose": "nationland cityscape — city not yet named",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/nationland-stockholm.webp",
+      "status": "published",
+      "imageSubject": "Present-day Stockholm, Sweden skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-nationland-life",
@@ -483,22 +495,28 @@
       "id": "nation-dreamland-thumbnail",
       "page": "/nations/",
       "purpose": "dreamland thumbnail",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/dreamland-new-york.webp",
+      "status": "published",
+      "imageSubject": "Present-day New York City, United States skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-dreamland-hero",
       "page": "/nations/dreamland/",
       "purpose": "dreamland national cover",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/dreamland-new-york.webp",
+      "status": "published",
+      "imageSubject": "Present-day New York City, United States skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-dreamland-city",
       "page": "/nations/dreamland/",
       "purpose": "dreamland cityscape — city not yet named",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/dreamland-new-york.webp",
+      "status": "published",
+      "imageSubject": "Present-day New York City, United States skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-dreamland-life",
@@ -511,22 +529,28 @@
       "id": "nation-nirvanaland-thumbnail",
       "page": "/nations/",
       "purpose": "nirvanaland thumbnail",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/nirvanaland-tokyo.webp",
+      "status": "published",
+      "imageSubject": "Present-day Tokyo, Japan skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-nirvanaland-hero",
       "page": "/nations/nirvanaland/",
       "purpose": "nirvanaland national cover",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/nirvanaland-tokyo.webp",
+      "status": "published",
+      "imageSubject": "Present-day Tokyo, Japan skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-nirvanaland-city",
       "page": "/nations/nirvanaland/",
       "purpose": "nirvanaland cityscape — city not yet named",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/nirvanaland-tokyo.webp",
+      "status": "published",
+      "imageSubject": "Present-day Tokyo, Japan skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-nirvanaland-life",
@@ -539,22 +563,28 @@
       "id": "nation-wonderland-thumbnail",
       "page": "/nations/",
       "purpose": "wonderland thumbnail",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/wonderland-seoul.webp",
+      "status": "published",
+      "imageSubject": "Present-day Seoul, South Korea skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-wonderland-hero",
       "page": "/nations/wonderland/",
       "purpose": "wonderland national cover",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/wonderland-seoul.webp",
+      "status": "published",
+      "imageSubject": "Present-day Seoul, South Korea skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-wonderland-city",
       "page": "/nations/wonderland/",
       "purpose": "wonderland cityscape — city not yet named",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/wonderland-seoul.webp",
+      "status": "published",
+      "imageSubject": "Present-day Seoul, South Korea skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-wonderland-life",
@@ -567,22 +597,28 @@
       "id": "nation-prosperland-thumbnail",
       "page": "/nations/",
       "purpose": "prosperland thumbnail",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/prosperland-singapore.webp",
+      "status": "published",
+      "imageSubject": "Present-day Singapore skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-prosperland-hero",
       "page": "/nations/prosperland/",
       "purpose": "prosperland national cover",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/prosperland-singapore.webp",
+      "status": "published",
+      "imageSubject": "Present-day Singapore skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-prosperland-city",
       "page": "/nations/prosperland/",
       "purpose": "prosperland cityscape — city not yet named",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/prosperland-singapore.webp",
+      "status": "published",
+      "imageSubject": "Present-day Singapore skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-prosperland-life",
@@ -595,22 +631,28 @@
       "id": "nation-harmonyland-thumbnail",
       "page": "/nations/",
       "purpose": "harmonyland thumbnail",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/harmonyland-zurich.webp",
+      "status": "published",
+      "imageSubject": "Present-day Zürich, Switzerland skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-harmonyland-hero",
       "page": "/nations/harmonyland/",
       "purpose": "harmonyland national cover",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/harmonyland-zurich.webp",
+      "status": "published",
+      "imageSubject": "Present-day Zürich, Switzerland skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-harmonyland-city",
       "page": "/nations/harmonyland/",
       "purpose": "harmonyland cityscape — city not yet named",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/harmonyland-zurich.webp",
+      "status": "published",
+      "imageSubject": "Present-day Zürich, Switzerland skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-harmonyland-life",
@@ -623,22 +665,28 @@
       "id": "nation-everland-thumbnail",
       "page": "/nations/",
       "purpose": "everland thumbnail",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/everland-shanghai.webp",
+      "status": "published",
+      "imageSubject": "Present-day Shanghai, China skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-everland-hero",
       "page": "/nations/everland/",
       "purpose": "everland national cover",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/everland-shanghai.webp",
+      "status": "published",
+      "imageSubject": "Present-day Shanghai, China skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-everland-city",
       "page": "/nations/everland/",
       "purpose": "everland cityscape — city not yet named",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/nations/everland-shanghai.webp",
+      "status": "published",
+      "imageSubject": "Present-day Shanghai, China skyline",
+      "imageType": "AI-generated contemporary skyline illustration"
     },
     {
       "id": "nation-everland-life",
@@ -648,5 +696,7 @@
       "status": "awaiting-image"
     }
   ],
-  "characterPortraits": "Characters use portrait paths in characters/registry.json"
+  "characterPortraits": "Characters use portrait paths in characters/registry.json",
+  "filledSlotCount": 24,
+  "missingSlotCount": 68
 }
