@@ -267,7 +267,11 @@
       "page": "/social-orders/",
       "purpose": "automata portrait",
       "assetPath": null,
-      "status": "awaiting-image"
+      "status": "approved-awaiting-upload",
+      "expectedAssetPath": "assets/images/beings/automata-librium-saga.webp",
+      "imageSubject": "Photorealistic titanium and graphite humanoid Automata before bright cathedral columns",
+      "placement": "Social Orders / Artificial and Engineered Beings / Automata",
+      "imageType": "Creator-approved reference artwork"
     },
     {
       "id": "being-miscreant",
