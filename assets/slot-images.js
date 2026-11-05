@@ -21,6 +21,17 @@
     if(!existing)figure.appendChild(link);
     /* The complete empty preview is a target, not just the icon. */
     figure.classList.add("slot-can-upload");
+    figure.tabIndex=0;
+    figure.addEventListener("click",function(e){
+      if(!figure.classList.contains("slot-can-upload"))return;
+      if(e.target.closest("a,button,input,select,textarea"))return;
+      window.location.assign(href);
+    });
+    figure.addEventListener("keydown",function(e){
+      if(!figure.classList.contains("slot-can-upload"))return;
+      if(e.target!==figure)return;
+      if(e.key==="Enter"||e.key===" "){e.preventDefault();window.location.assign(href);}
+    });
     var fileURL=new URL("assets/images/slots/"+id+".webp",root);
     var probe=new Image();
     probe.onload=function(){
@@ -35,6 +46,7 @@
       img.decoding="async";
       figure.classList.add("image-filled");
       figure.classList.remove("slot-can-upload");
+      figure.removeAttribute("tabindex");
     };
     probe.onerror=function(){ /* Keep upload icon on unfilled slots. */ };
     probe.src=fileURL.href;
