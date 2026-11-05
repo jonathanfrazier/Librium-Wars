@@ -1,139 +1,128 @@
-/* Librium Saga uploader. Browser-only token, GitHub REST Contents API.
-   Do not store access tokens in repository, localStorage, cookies or URLs. */
+/* Librium Saga — OAuth-backed image uploader. No personal tokens pasted into the website. */
 (function(){
 "use strict";
-const OWNER="jonathanfrazier", REPO="Librium-Wars", BRANCH="main";
 const $=id=>document.getElementById(id);
-const page=$("page"),slot=$("slot"),file=$("file"),token=$("token"),publish=$("publish"),status=$("status"),preview=$("preview"),dest=$("destination"),openpage=$("openpage");
-let slots=[],chosen=null,previewURL=null,busy=false;
-function say(message,type){status.textContent=message;status.dataset.type=type||"";}
+const page=$("page"),slot=$("slot"),file=$("file"),publish=$("publish"),status=$("status"),preview=$("preview"),dest=$("destination"),openpage=$("openpage");
+const signin=$("github-signin"),signout=$("github-signout"),authmsg=$("auth-state");
+let slots=[],chosen=null,previewURL=null,busy=false,authenticated=false,configured=false;
+function say(msg,type){status.textContent=msg;status.dataset.type=type||"";}
 function groupName(path){return path==="/"?"Homepage":path.replace(/^\//,"").replace(/\/$/,"").replaceAll("/"," → ");}
-function refreshButton(){publish.disabled=busy||!chosen||!file.files.length||!token.value.trim();}
-function currentSlug(){return new URLSearchParams(location.search).get("slot");}
+function refreshButton(){publish.disabled=busy||!authenticated||!chosen||!file.files.length;}
+function currentSlot(){return new URLSearchParams(location.search).get("slot");}
+async function checkLogin(){
+ try{
+  const r=await fetch("/.netlify/functions/librium-status",{credentials:"same-origin",cache:"no-store"});
+  if(!r.ok)throw Error("Sign-in service is not available yet");
+  const data=await r.json();configured=!!data.configured;authenticated=!!data.authenticated;
+  if(authenticated){authmsg.textContent="Signed in as "+data.login+". You can publish images.";signin.hidden=true;signout.hidden=false;}
+  else if(configured){authmsg.textContent="Sign in with GitHub to publish your artwork.";signin.hidden=false;signout.hidden=true;}
+  else{authmsg.textContent="GitHub sign-in needs one-time owner setup in Netlify before it can be used.";signin.hidden=true;signout.hidden=true;$("setup-info").hidden=false;}
+ }catch(e){authmsg.textContent=e.message;signin.hidden=true;signout.hidden=true;$("setup-info").hidden=false;}
+ refreshButton();
+ const auth=new URLSearchParams(location.search).get("auth");
+ if(auth==="failed")say("GitHub sign-in could not be completed. Please try again.","error");
+ if(auth==="denied")say("You declined GitHub authorization.","error");
+ if(auth==="setup")say("The site owner must complete the one-time sign-in setup.","error");
+}
 async function init(){
  try{
-  const r=await fetch("../assets/IMAGE-SLOTS.json",{cache:"no-store"});
-  if(!r.ok)throw new Error("Image inventory not available");
+  const r=await fetch("../assets/IMAGE-SLOTS.json",{cache:"no-store"});if(!r.ok)throw Error("Image inventory not available.");
   const data=await r.json();
   slots=(data.slots||[]).filter(x=>/^[a-z0-9-]+$/.test(x.id)&&typeof x.page==="string");
-  const groups=[...new Set(slots.map(x=>x.page))];
   page.innerHTML="";
-  for(const path of groups){const opt=document.createElement("option");opt.value=path;opt.textContent=groupName(path);page.append(opt);}
-  const id=currentSlug();
-  const found=slots.find(x=>x.id===id);
+  for(const path of [...new Set(slots.map(x=>x.page))]){
+   const opt=document.createElement("option");opt.value=path;opt.textContent=groupName(path);page.append(opt);
+  }
+  const found=slots.find(x=>x.id===currentSlot());
   if(found)page.value=found.page;
-  fillSlots(found?found.id:null);
- }catch(e){say("Could not load the image inventory: "+e.message,"error");page.innerHTML='<option>Unavailable</option>';}
+  fillSlots(found?.id);
+ }catch(e){say("Could not load image slots: "+e.message,"error");}
+ await checkLogin();
 }
-function fillSlots(selected){
+function fillSlots(id){
  slot.innerHTML="";
- const list=slots.filter(x=>x.page===page.value);
- for(const entry of list){
-   const o=document.createElement("option");o.value=entry.id;
-   o.textContent=entry.purpose+" — "+entry.id+(entry.status==="published"?" (existing)":"");
-   slot.append(o);
+ for(const entry of slots.filter(x=>x.page===page.value)){
+  const option=document.createElement("option");option.value=entry.id;
+  option.textContent=entry.purpose+" — "+entry.id+(entry.status==="published"?" (existing)":"");slot.append(option);
  }
- if(selected&&list.some(x=>x.id===selected))slot.value=selected;
+ if(id&&slots.some(x=>x.id===id&&x.page===page.value))slot.value=id;
  updateDestination();
 }
 function updateDestination(){
  chosen=slots.find(x=>x.id===slot.value)||null;
- if(!chosen){dest.textContent="Choose a placement";openpage.href="../";refreshButton();return;}
- dest.textContent="Selected: "+chosen.purpose+"\nSlot ID: "+chosen.id+"\nPage: "+groupName(chosen.page);
- dest.style.whiteSpace="pre-line";
- openpage.href=new URL(".."+chosen.page,location.href).href;
- const url=new URL(location.href);url.searchParams.set("slot",chosen.id);history.replaceState(null,"",url.href);
+ if(chosen){
+  dest.textContent="Selected: "+chosen.purpose+"\nImage ID: "+chosen.id+"\nPage: "+groupName(chosen.page);
+  dest.style.whiteSpace="pre-line";
+  openpage.href=new URL(".."+chosen.page,location.href).href;
+  const url=new URL(location.href);url.searchParams.set("slot",chosen.id);url.searchParams.delete("auth");history.replaceState(null,"",url.href);
+ }else dest.textContent="Choose an image position.";
  refreshButton();
 }
 function imagePreview(){
- if(previewURL)URL.revokeObjectURL(previewURL);
- previewURL=null;
- const f=file.files[0];
- if(!f){preview.style.display="none";refreshButton();return;}
- if(!f.type.startsWith("image/")){say("Please select an image file.","error");file.value="";preview.style.display="none";refreshButton();return;}
- if(f.size>30*1024*1024){say("Please use an image smaller than 30 MB.","error");file.value="";preview.style.display="none";refreshButton();return;}
+ if(previewURL)URL.revokeObjectURL(previewURL);previewURL=null;
+ const f=file.files[0];preview.style.display="none";
+ if(!f){refreshButton();return}
+ if(!f.type.startsWith("image/")&&!/\.(heic|heif|jpg|jpeg|png|avif|webp)$/i.test(f.name)){say("Please select an image file.","error");file.value="";refreshButton();return}
+ if(f.size>30*1024*1024){say("Choose an image smaller than 30 MB.","error");file.value="";refreshButton();return}
  previewURL=URL.createObjectURL(f);preview.src=previewURL;preview.style.display="block";say("");refreshButton();
 }
 async function optimize(f){
- const url=URL.createObjectURL(f);
+ const u=URL.createObjectURL(f);
  try{
-  const image=new Image();
-  image.src=url;
-  await image.decode();
-  if(!image.naturalWidth||!image.naturalHeight)throw new Error("Could not decode this image. Try a PNG or JPEG.");
-  const portrait=image.naturalHeight>image.naturalWidth;
-  const limit=portrait?1600:2400;
-  const scale=Math.min(1,limit/Math.max(image.naturalWidth,image.naturalHeight));
-  const canvas=document.createElement("canvas");
-  canvas.width=Math.max(1,Math.round(image.naturalWidth*scale));
-  canvas.height=Math.max(1,Math.round(image.naturalHeight*scale));
-  const ctx=canvas.getContext("2d");if(!ctx)throw new Error("Image editor could not start on this device.");
-  ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality="high";
-  ctx.drawImage(image,0,0,canvas.width,canvas.height);
-  const blob=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error("Could not optimize this image.")),"image/webp",0.88));
-  if(blob.type!=="image/webp")throw new Error("WebP is unavailable in this browser. Try the latest Safari or Chrome.");
-  return blob;
- }finally{URL.revokeObjectURL(url);}
+  const img=new Image();img.src=u;await img.decode();
+  const portrait=img.naturalHeight>img.naturalWidth;
+  let width,height,max=portrait?1600:2400;
+  const scale=Math.min(1,max/Math.max(img.naturalWidth,img.naturalHeight));
+  width=Math.round(img.naturalWidth*scale);height=Math.round(img.naturalHeight*scale);
+  const cv=document.createElement("canvas");cv.width=width;cv.height=height;
+  const ctx=cv.getContext("2d");if(!ctx)throw Error("Unable to process image on this device.");
+  ctx.imageSmoothingQuality="high";ctx.drawImage(img,0,0,width,height);
+  for(const quality of [0.88,0.8,0.7]){
+   const blob=await new Promise((resolve,reject)=>cv.toBlob(resolve,"image/webp",quality));
+   if(!blob)throw Error("Unable to encode image.");
+   if(blob.type!=="image/webp")throw Error("Your browser does not support WebP image output.");
+   if(blob.size<3.8*1024*1024)return blob;
+  }
+  throw Error("The image is too large even after optimization. Please use a smaller image.");
+ }finally{URL.revokeObjectURL(u);}
 }
-function base64(blob){
+async function encode(blob){
  return new Promise((resolve,reject)=>{
   const reader=new FileReader();reader.onload=()=>resolve(String(reader.result).split(",")[1]);
-  reader.onerror=()=>reject(new Error("Could not read the selected image."));reader.readAsDataURL(blob);
+  reader.onerror=()=>reject(Error("Failed to read image."));reader.readAsDataURL(blob);
  });
 }
-async function api(method,path,secret,body){
- const response=await fetch("https://api.github.com/repos/"+OWNER+"/"+REPO+"/contents/"+path,{
-  method,headers:{"Accept":"application/vnd.github+json","Authorization":"Bearer "+secret,...(body?{"Content-Type":"application/json"}:{})},
-  ...(body?{body:JSON.stringify(body)}:{})
- });
- const result=await response.json().catch(()=>({}));
- if(response.status===404&&method==="GET")return null;
- if(!response.ok)throw new Error(result.message||"GitHub "+response.status+" "+response.statusText);
- return result;
-}
-async function publishImage(){
- if(busy||!chosen||!file.files.length||!token.value.trim())return;
- const selected={...chosen},f=file.files[0],secret=token.value.trim();
- if(!confirm("Publish \""+f.name+"\" to:\n\n"+groupName(selected.page)+"\n"+selected.purpose+"\n\nExact slot: "+selected.id+"\n\nThis replaces any previous image in this slot."))return;
+async function upload(){
+ if(busy||!authenticated||!chosen||!file.files[0])return;
+ const place={...chosen},chosenFile=file.files[0];
+ if(!confirm('Upload "'+chosenFile.name+'" to\n'+groupName(place.page)+'\n'+place.purpose+'?\n\nThis replaces existing artwork at that location.'))return;
  busy=true;refreshButton();
  try{
-  say("Preparing and optimizing your image…");
-  const blob=await optimize(f);
-  say("Uploading "+(blob.size/1024).toFixed(0)+" KB to GitHub…");
-  const path="assets/images/slots/"+selected.id+".webp";
-  const found=await api("GET",path,secret);
-  const content=await base64(blob);
-  const payload={message:"Publish image for "+selected.id,content,branch:BRANCH};
-  if(found?.sha)payload.sha=found.sha;
-  await api("PUT",path,secret,payload);
-  say("Image uploaded to GitHub. Updating the image tracker…");
-  let trackerWarning="";
-  try{
-   const entry=await api("GET","assets/IMAGE-SLOTS.json",secret);
-   if(entry?.content&&entry?.sha){
-    const decoded=atob(entry.content.replace(/\s/g,""));
-    const bytes=Uint8Array.from(decoded,c=>c.charCodeAt(0));
-    const registry=JSON.parse(new TextDecoder().decode(bytes));
-    const target=(registry.slots||[]).find(x=>x.id===selected.id);
-    if(target){
-      target.assetPath=path;target.status="published";
-      const encoded=await base64(new Blob([JSON.stringify(registry,null,2)+"\n"],{type:"application/json"}));
-      await api("PUT","assets/IMAGE-SLOTS.json",secret,{message:"Mark "+selected.id+" image as published",content:encoded,sha:entry.sha,branch:BRANCH});
-    }
-   }
-  }catch(e){trackerWarning=" The image uploaded, but the tracker update failed: "+e.message;}
-  say("Published to GitHub for: "+selected.purpose+" ("+selected.id+"). Netlify will deploy this image automatically."+trackerWarning,"success");
-  openpage.focus();
- }catch(e){
-   const msg=e.message.includes("401")?"Authorization failed. Check your GitHub token.":e.message;
-   say("Upload failed: "+msg,"error");
+  say("Preparing image…");
+  const optimized=await optimize(chosenFile);
+  say("Uploading directly to the selected image position…");
+  const base64=await encode(optimized);
+  const r=await fetch("/.netlify/functions/librium-upload",{
+   method:"POST",credentials:"same-origin",
+   headers:{"content-type":"application/json","x-librium-upload":"yes"},
+   body:JSON.stringify({slotId:place.id,content:base64})
+  });
+  const result=await r.json().catch(()=>({}));
+  if(!r.ok||!result.success)throw Error(result.error||"Upload did not complete");
+  say("Published to GitHub! Image: "+place.purpose+"\nPage: "+groupName(place.page)+"\nNetlify will deploy the new artwork automatically."+(result.tracked?"":" Note: The image was saved, but the tracker may need refreshing."),"success");
+ }catch(err){
+  say("Upload failed: "+err.message,"error");
+  if(/sign in|expired/i.test(err.message)){authenticated=false;checkLogin();}
  }finally{busy=false;refreshButton();}
 }
+signin.addEventListener("click",()=>{const u="/.netlify/functions/librium-login"+(chosen?"?slot="+encodeURIComponent(chosen.id):"");location.href=u;});
+signout.addEventListener("click",async()=>{
+ try{await fetch("/.netlify/functions/librium-logout",{method:"POST",credentials:"same-origin"});authenticated=false;await checkLogin();}catch(e){say(e.message,"error");}
+});
 page.addEventListener("change",()=>fillSlots(null));
 slot.addEventListener("change",updateDestination);
 file.addEventListener("change",imagePreview);
-token.addEventListener("input",refreshButton);
-publish.addEventListener("click",publishImage);
+publish.addEventListener("click",upload);
 window.addEventListener("beforeunload",()=>{if(previewURL)URL.revokeObjectURL(previewURL);});
 init();
 })();
