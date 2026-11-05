@@ -20,28 +20,24 @@ details{margin-top:14px;color:#d0bdc5}summary{cursor:pointer;color:#e7b49f}ol{pa
 </style>
 </head><body>
 <main><div style="font-size:12px;letter-spacing:.16em;color:#dba995">LIBRIUM SAGA · CREATOR TOOLS</div><h1>Upload Images</h1>
-<p class="intro">Choose a specific image slot, select your picture from your iPhone or computer, and publish it directly to that position on the website. No folders or filename matching required.</p>
+<p class="intro">Choose the exact image slot and send artwork from your phone without signing in. The image is delivered to the site's submission inbox for publication.</p>
 <section class="step"><h2>1. Select the destination</h2>
 <label class="label" for="page">Website section</label><select id="page"><option value="">Loading sections…</option></select>
 <label class="label" for="slot">Exact image placement</label><select id="slot"><option value="">Loading images…</option></select>
 <div id="destination" class="location" aria-live="polite">Loading image positions…</div>
 <a id="openpage" href="../" target="_blank" rel="noopener">View destination page</a>
 </section>
-<section class="step"><h2>2. Choose your image</h2>
+<form id="artwork-form" name="librium-artwork" method="POST" action="/upload-images/" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="librium-artwork"><input type="hidden" id="slot-id" name="slot-id"><input type="hidden" id="page-path" name="page-path"><p style="display:none" aria-hidden="true"><label>Leave this blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p><section class="step"><h2>2. Choose your image</h2>
 <label class="label" for="file">Picture from your device</label>
-<input id="file" type="file" accept="image/jpeg,image/png,image/webp,image/avif,image/heic,image/heif,image/*">
+<input id="file" name="artwork" required type="file" accept="image/jpeg,image/png,image/webp,image/avif,image/heic,image/heif,image/*">
 <img id="preview" alt="Preview of image selected for upload">
 <p class="hint">The uploader automatically optimizes a copy for the web, preserving the original file on your device. Portraits remain portrait and banners remain landscape. You can replace an existing image by uploading another to the same slot.</p>
 </section>
-<section class="step"><h2>3. Sign in &amp; publish</h2>
-<p class="hint">Only the authorized site owner can publish. Sign in securely with GitHub—no access token to copy and paste.</p>
-<p id="auth-state" role="status" aria-live="polite">Checking GitHub sign-in…</p>
-<button id="github-signin" type="button" hidden style="background:#27232f;color:#f3e6e5;border:1px solid #7c6777"><span aria-hidden="true">◉</span> Sign in with GitHub</button>
-<button id="github-signout" type="button" hidden style="width:auto;background:transparent;color:#d4b5a4;border:1px solid #695665;padding:9px 12px;font-size:13px">Sign out</button>
-<div id="setup-info" hidden class="hint"><p>One-time website owner setup is required before GitHub sign-in works. <a href="https://github.com/jonathanfrazier/Librium-Wars/blob/main/docs/GITHUB-SIGN-IN-SETUP.md" target="_blank" rel="noopener noreferrer">View setup instructions</a>.</p></div>
-<button id="publish" disabled>Publish to Librium Saga</button><div id="status" role="status" aria-live="polite"></div>
-</section>
-<p class="hint">After GitHub accepts the upload, Netlify automatically deploys the change. The image may take a moment to appear on your public site. Your chosen image is mapped using its unique slot ID, so there is no chance of selecting the wrong folder.</p>
+<section class="step"><h2>3. Send artwork</h2>
+<p class="hint">No account, token, or GitHub sign-in is required. This sends the image to the Librium Saga submission inbox. It does <strong>not</strong> automatically overwrite published images.</p>
+<button id="publish" type="submit" disabled>Submit Image</button><div id="status" role="status" aria-live="polite"></div>
+</section></form>
+<p class="hint">Submissions are saved in Netlify Forms with the exact image-slot ID attached. Publication remains a separate step to protect existing artwork. The form requires Netlify form detection to be enabled in the project.</p>
 </main>
 <script src="../assets/site-nav.js"></script>
 <script src="../assets/image-uploader.js"></script>
