@@ -266,10 +266,10 @@
       "id": "being-automata",
       "page": "/social-orders/",
       "purpose": "automata portrait",
-      "assetPath": null,
-      "status": "approved-awaiting-upload",
-      "expectedAssetPath": "assets/images/beings/automata-librium-saga.webp",
-      "imageSubject": "Photorealistic titanium and graphite humanoid Automata before bright cathedral columns",
+      "assetPath": "assets/images/beings/automata-librium-saga.avif",
+      "status": "published",
+      "expectedAssetPath": "assets/images/beings/automata-librium-saga.avif",
+      "imageSubject": "Approved robotic Automata portrait",
       "placement": "Social Orders / Artificial and Engineered Beings / Automata",
       "imageType": "Creator-approved reference artwork"
     },
@@ -277,8 +277,10 @@
       "id": "being-miscreant",
       "page": "/social-orders/",
       "purpose": "miscreant portrait",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/beings/miscreant-domestic-servant.avif",
+      "status": "published",
+      "expectedAssetPath": "assets/images/beings/miscreant-domestic-servant.avif",
+      "imageSubject": "Approved female feline-variant engineered Miscreant portrait"
     },
     {
       "id": "being-biobots",
