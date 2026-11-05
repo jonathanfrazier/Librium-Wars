@@ -31,3 +31,9 @@ body.ls-is-home > hr{max-width:960px;border:0;border-top:1px solid #453945;margi
 .ls-home-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:21px;background:#191722;color:#edd5c7;border:1px solid #4d3b48;border-radius:10px;text-align:left;text-decoration:none;font:500 17px/1.4 system-ui,sans-serif}
 .ls-home-links a:hover{background:#28202d;border-color:#bd897e}
 .ls-home-links a span:last-child{font-size:20px;color:#e8b99c}
+
+/* Visible uploader action on both mobile and desktop. */
+.ls-global-nav a.ls-upload-button{color:#1c1420!important;background:#e6b69d;text-decoration:none!important;font:700 12px/1.2 system-ui,sans-serif;letter-spacing:.01em;padding:11px 12px;border-radius:9px;white-space:nowrap;flex-shrink:0}
+.ls-global-nav a.ls-upload-button:hover,.ls-global-nav a.ls-upload-button:focus-visible{background:#f7d2bd}
+@media(max-width:950px){.ls-nav-links{display:none}.ls-nav-mobile{display:block}}
+@media(max-width:520px){.ls-nav-inner{gap:7px}.ls-nav-brand{font-size:12px;letter-spacing:.07em}.ls-global-nav a.ls-upload-button{font-size:11px;padding:10px 8px}.ls-nav-mobile summary{padding:8px 9px;font-size:12px}}
