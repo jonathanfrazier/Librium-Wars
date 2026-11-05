@@ -92,7 +92,7 @@ form.addEventListener("submit",async event=>{
   say("Sending image to the Librium Saga submission inbox…");
   const r=await fetch("/upload-images/",{method:"POST",body:data,credentials:"same-origin",redirect:"follow"});
   if(!r.ok)throw Error("The image could not be submitted (HTTP "+r.status+"). Check that Netlify Forms is enabled.");
-  say("Image submitted for "+chosen.purpose+". It is in the Netlify submissions inbox, not yet published on the website.","success");
+  say("Submission request sent for "+chosen.purpose+". If Netlify Forms is enabled, the artwork will appear in its inbox; it is not yet published on the website.","success");
   form.reset();file.value="";preview.style.display="none";
   if(previewURL)URL.revokeObjectURL(previewURL);previewURL=null;
   syncSlot();
