@@ -83,7 +83,7 @@ function base64(blob){
 }
 async function api(method,path,secret,body){
  const response=await fetch("https://api.github.com/repos/"+OWNER+"/"+REPO+"/contents/"+path,{
-  method,headers:{"Accept":"application/vnd.github+json","Authorization":"Bearer "+secret,"X-GitHub-Api-Version":"2022-11-28",...(body?{"Content-Type":"application/json"}:{})},
+  method,headers:{"Accept":"application/vnd.github+json","Authorization":"Bearer "+secret,...(body?{"Content-Type":"application/json"}:{})},
   ...(body?{body:JSON.stringify(body)}:{})
  });
  const result=await response.json().catch(()=>({}));
