@@ -1,0 +1,4 @@
+/* Image management links are discreet and appear only where artwork is missing. */
+.image-slot .slot-upload-link{z-index:2;display:inline-block;text-decoration:none!important;background:#32252f;border:1px solid #ad8079;border-radius:7px;padding:7px 11px;font:600 12px/1.3 system-ui,sans-serif;color:#ffe7d4!important;margin-top:4px}
+.image-slot .slot-upload-link:hover,.image-slot .slot-upload-link:focus-visible{background:#4b333b}
+.image-slot.image-filled .slot-upload-link{display:none}
