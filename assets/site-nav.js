@@ -9,7 +9,8 @@
     ['Nine Ages','ages/'],
     ['Religions','religions/'],
     ['Social Orders','social-orders/'],
-    ['Characters','characters/']
+    ['Characters','characters/'],
+    ['Upload Images','upload-images/']
   ];
   function link(item){
     var a=document.createElement('a');
@@ -35,6 +36,9 @@
   sections.forEach(function(item){var a=link(item);a.addEventListener('click',function(){mobile.open=false});panel.appendChild(a);});
   mobile.appendChild(panel);inner.appendChild(mobile);nav.appendChild(inner);
   document.body.insertBefore(nav,document.body.firstChild);
+  /* Enable image uploads and automatic placement on every archive page. */
+  var css=document.createElement('link');css.rel='stylesheet';css.href=new URL('assets/slot-upload-links.css',root).href;document.head.appendChild(css);
+  var loader=document.createElement('script');loader.src=new URL('assets/slot-images.js',root).href;document.body.appendChild(loader);
   if(window.location.pathname===root.pathname){document.body.classList.add('ls-is-home');}
   document.addEventListener('keydown',function(e){if(e.key==='Escape')mobile.open=false;});
 })();
