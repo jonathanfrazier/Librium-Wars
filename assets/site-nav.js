@@ -9,8 +9,7 @@
     ['Nine Ages','ages/'],
     ['Religions','religions/'],
     ['Social Orders','social-orders/'],
-    ['Characters','characters/'],
-    ['Upload Images','upload-images/']
+    ['Characters','characters/']
   ];
   function link(item){
     var a=document.createElement('a');
@@ -30,6 +29,12 @@
   var desktop=document.createElement('div');desktop.className='ls-nav-links';
   sections.forEach(function(item){desktop.appendChild(link(item));});
   inner.appendChild(desktop);
+  var upload=document.createElement('a');
+  upload.href=new URL('upload-images/',root).href;
+  upload.className='ls-upload-button';
+  upload.textContent='Upload Images';
+  upload.setAttribute('aria-label','Open image uploader');
+  inner.appendChild(upload);
   var mobile=document.createElement('details');mobile.className='ls-nav-mobile';
   var toggle=document.createElement('summary');toggle.textContent='Explore';toggle.setAttribute('aria-label','Open site navigation');mobile.appendChild(toggle);
   var panel=document.createElement('div');panel.className='ls-mobile-panel';
