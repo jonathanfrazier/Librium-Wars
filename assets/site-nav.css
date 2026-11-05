@@ -1,0 +1,33 @@
+/* Shared responsive Librium Saga global navigation. */
+:root{--ls-nav-bg:#10111b;--ls-nav-border:#39303c;--ls-nav-text:#eee4e3;--ls-nav-muted:#bdaeb7;--ls-nav-accent:#e8b99c}
+.ls-global-nav,.ls-global-nav *{box-sizing:border-box}
+.ls-global-nav{position:sticky;top:0;z-index:1000;background:rgba(16,17,27,.97);border-bottom:1px solid var(--ls-nav-border);color:var(--ls-nav-text);font:500 14px/1.4 system-ui,-apple-system,sans-serif;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);text-align:left}
+.ls-nav-inner{max-width:1250px;margin:auto;min-height:68px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.ls-global-nav a{color:var(--ls-nav-text);text-decoration:none!important}
+.ls-nav-brand{font:600 15px/1.2 Georgia,serif;letter-spacing:.12em;white-space:nowrap}
+.ls-nav-links{display:flex;align-items:center;gap:5px}
+.ls-nav-links a{display:block;padding:10px 11px;border-radius:7px;color:var(--ls-nav-muted)}
+.ls-nav-links a:hover,.ls-nav-links a:focus-visible{color:#fff;background:#262131;outline-offset:2px}
+.ls-nav-links a[aria-current="page"]{background:#31242d;color:var(--ls-nav-accent)}
+.ls-nav-mobile{display:none}
+.ls-nav-mobile summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;color:var(--ls-nav-accent);padding:9px 12px;border:1px solid #59454e;border-radius:8px}
+.ls-nav-mobile summary::-webkit-details-marker{display:none}
+.ls-nav-mobile summary:after{content:"☰";font-size:17px}
+.ls-nav-mobile[open] summary:after{content:"×";font-size:20px}
+.ls-mobile-panel{position:absolute;top:100%;left:0;right:0;background:#13131f;border-bottom:1px solid #51404c;padding:12px 20px 17px;box-shadow:0 16px 32px #0008;display:grid;gap:3px}
+.ls-mobile-panel a{padding:13px 12px;border-radius:6px}
+.ls-mobile-panel a[aria-current="page"]{background:#30222d;color:var(--ls-nav-accent)}
+.ls-mobile-panel a:hover,.ls-mobile-panel a:focus-visible{background:#292232}
+@media(max-width:850px){.ls-nav-inner{min-height:62px}.ls-nav-links{display:none}.ls-nav-mobile{display:block}}
+@media(max-width:420px){.ls-nav-inner{padding:0 15px}.ls-nav-brand{font-size:13px}}
+/* Keep the main homepage readable; prevent previous full-width body padding from inseting the global navigation */
+body.ls-is-home{padding:0!important}
+body.ls-is-home > :not(.ls-global-nav){max-width:1120px;margin-left:auto;margin-right:auto}
+body.ls-is-home > h1{margin-top:72px}
+body.ls-is-home > figure{width:calc(100% - 36px)}
+body.ls-is-home > p{padding-left:18px;padding-right:18px}
+body.ls-is-home > hr{max-width:960px;border:0;border-top:1px solid #453945;margin-top:40px}
+.ls-home-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:1000px!important;padding:25px 18px 20px}
+.ls-home-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:21px;background:#191722;color:#edd5c7;border:1px solid #4d3b48;border-radius:10px;text-align:left;text-decoration:none;font:500 17px/1.4 system-ui,sans-serif}
+.ls-home-links a:hover{background:#28202d;border-color:#bd897e}
+.ls-home-links a span:last-child{font-size:20px;color:#e8b99c}
