@@ -422,10 +422,10 @@
       "purpose": "Eight Nations archive cover",
       "assetPath": null,
       "status": "approved-awaiting-upload",
-      "expectedAssetPath": "assets/images/nations/dreamland-librium-day.webp",
-      "imageSubject": "Dreamland Librium Day celebration in former New York City Times Square",
+      "expectedAssetPath": "assets/images/nations/dreamland-librium-day-golden-hour.webp",
+      "imageSubject": "Dreamland Librium Day in Times Square: warm golden-hour lighting, dark glass-and-stone buildings, green Dreamland banner, cheering crowd, swirling papers",
       "imageType": "AI-generated approved artwork",
-      "placement": "Full-width top of /nations/, above title and nation cards"
+      "placement": "Full-width Nations header above title and eight national cards"
     },
     {
       "id": "nation-joyland-thumbnail",
