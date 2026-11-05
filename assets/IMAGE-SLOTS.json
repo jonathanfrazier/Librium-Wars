@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "description": "Canonical image placement IDs. Placeholder only; source images have not been uploaded.",
-  "slotCount": 59,
+  "slotCount": 92,
   "slots": [
     {
       "id": "home-hero",
@@ -413,6 +413,237 @@
       "id": "religion-neoist",
       "page": "/religions/",
       "purpose": "neoist portrait or religious symbol",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nations-overview-hero",
+      "page": "/nations/",
+      "purpose": "Eight Nations archive cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-joyland-thumbnail",
+      "page": "/nations/",
+      "purpose": "joyland thumbnail",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-joyland-hero",
+      "page": "/nations/joyland/",
+      "purpose": "joyland national cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-joyland-city",
+      "page": "/nations/joyland/",
+      "purpose": "joyland cityscape — city not yet named",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-joyland-life",
+      "page": "/nations/joyland/",
+      "purpose": "joyland daily life",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-nationland-thumbnail",
+      "page": "/nations/",
+      "purpose": "nationland thumbnail",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-nationland-hero",
+      "page": "/nations/nationland/",
+      "purpose": "nationland national cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-nationland-city",
+      "page": "/nations/nationland/",
+      "purpose": "nationland cityscape — city not yet named",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-nationland-life",
+      "page": "/nations/nationland/",
+      "purpose": "nationland daily life",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-dreamland-thumbnail",
+      "page": "/nations/",
+      "purpose": "dreamland thumbnail",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-dreamland-hero",
+      "page": "/nations/dreamland/",
+      "purpose": "dreamland national cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-dreamland-city",
+      "page": "/nations/dreamland/",
+      "purpose": "dreamland cityscape — city not yet named",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-dreamland-life",
+      "page": "/nations/dreamland/",
+      "purpose": "dreamland daily life",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-nirvanaland-thumbnail",
+      "page": "/nations/",
+      "purpose": "nirvanaland thumbnail",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-nirvanaland-hero",
+      "page": "/nations/nirvanaland/",
+      "purpose": "nirvanaland national cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-nirvanaland-city",
+      "page": "/nations/nirvanaland/",
+      "purpose": "nirvanaland cityscape — city not yet named",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-nirvanaland-life",
+      "page": "/nations/nirvanaland/",
+      "purpose": "nirvanaland daily life",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-wonderland-thumbnail",
+      "page": "/nations/",
+      "purpose": "wonderland thumbnail",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-wonderland-hero",
+      "page": "/nations/wonderland/",
+      "purpose": "wonderland national cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-wonderland-city",
+      "page": "/nations/wonderland/",
+      "purpose": "wonderland cityscape — city not yet named",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-wonderland-life",
+      "page": "/nations/wonderland/",
+      "purpose": "wonderland daily life",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-prosperland-thumbnail",
+      "page": "/nations/",
+      "purpose": "prosperland thumbnail",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-prosperland-hero",
+      "page": "/nations/prosperland/",
+      "purpose": "prosperland national cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-prosperland-city",
+      "page": "/nations/prosperland/",
+      "purpose": "prosperland cityscape — city not yet named",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-prosperland-life",
+      "page": "/nations/prosperland/",
+      "purpose": "prosperland daily life",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-harmonyland-thumbnail",
+      "page": "/nations/",
+      "purpose": "harmonyland thumbnail",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-harmonyland-hero",
+      "page": "/nations/harmonyland/",
+      "purpose": "harmonyland national cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-harmonyland-city",
+      "page": "/nations/harmonyland/",
+      "purpose": "harmonyland cityscape — city not yet named",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-harmonyland-life",
+      "page": "/nations/harmonyland/",
+      "purpose": "harmonyland daily life",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-everland-thumbnail",
+      "page": "/nations/",
+      "purpose": "everland thumbnail",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-everland-hero",
+      "page": "/nations/everland/",
+      "purpose": "everland national cover",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-everland-city",
+      "page": "/nations/everland/",
+      "purpose": "everland cityscape — city not yet named",
+      "assetPath": null,
+      "status": "awaiting-image"
+    },
+    {
+      "id": "nation-everland-life",
+      "page": "/nations/everland/",
+      "purpose": "everland daily life",
       "assetPath": null,
       "status": "awaiting-image"
     }
