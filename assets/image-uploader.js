@@ -57,23 +57,47 @@ function onFile(){
  previewURL=URL.createObjectURL(chosenFile);preview.src=previewURL;preview.style.display="block";say("");refresh();
 }
 async function prepareImage(input){
+ const limit=7*1024*1024;
+ const name=(chosen?.id||"librium-artwork");
+ /* iOS embedded browsers can preview JPEG while failing canvas WebP export.
+    Accept the original JPEG first: no canvas conversion required. */
+ if((input.type==="image/jpeg"||/\\.jpe?g$/i.test(input.name))&&input.size<limit){
+   return new File([input],name+".jpg",{type:"image/jpeg"});
+ }
  const url=URL.createObjectURL(input);
  try{
-  const img=new Image();img.src=url;await img.decode();
+  const img=new Image();
+  img.src=url;
+  try{await img.decode()}catch{
+   await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=()=>reject(Error("This browser cannot read the selected image."));});
+  }
+  if(!img.naturalWidth||!img.naturalHeight)throw Error("Image dimensions could not be read.");
   const max=img.naturalHeight>img.naturalWidth?1600:2400;
   const scale=Math.min(1,max/Math.max(img.naturalWidth,img.naturalHeight));
   const canvas=document.createElement("canvas");
   canvas.width=Math.max(1,Math.round(img.naturalWidth*scale));
   canvas.height=Math.max(1,Math.round(img.naturalHeight*scale));
   const ctx=canvas.getContext("2d");
-  if(!ctx)throw Error("Image processing unavailable");
-  ctx.imageSmoothingQuality="high";ctx.drawImage(img,0,0,canvas.width,canvas.height);
-  for(const quality of [0.88,0.76,0.65]){
-   const blob=await new Promise(resolve=>canvas.toBlob(resolve,"image/webp",quality));
-   if(!blob||blob.type!=="image/webp")throw Error("Cannot convert this image. Try JPEG or PNG.");
-   if(blob.size<7*1024*1024)return new File([blob],chosen.id+".webp",{type:"image/webp"});
+  if(!ctx)throw Error("Image processing is unavailable in this browser.");
+  ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality="high";
+  ctx.drawImage(img,0,0,canvas.width,canvas.height);
+  const encode=(mime,quality)=>new Promise(resolve=>{
+    try{canvas.toBlob(blob=>resolve(blob),mime,quality);}
+    catch{resolve(null);}
+  });
+  /* JPEG is reliably supported in iPhone webviews; never require WebP. */
+  for(const quality of [0.88,0.76,0.62,0.48]){
+   const blob=await encode("image/jpeg",quality);
+   if(blob&&blob.type==="image/jpeg"&&blob.size<limit){
+    return new File([blob],name+".jpg",{type:"image/jpeg"});
+   }
   }
-  throw Error("The image is too large for Netlify Forms. Use a smaller photo.");
+  /* Last resort for a modest-sized PNG or WebP when canvas export is blocked. */
+  if(input.size<limit&&["image/png","image/webp","image/avif"].includes(input.type)){
+   const extension={"image/png":"png","image/webp":"webp","image/avif":"avif"}[input.type];
+   return new File([input],name+"."+extension,{type:input.type});
+  }
+  throw Error("This browser could not prepare the image. Try a smaller JPEG.");
  }finally{URL.revokeObjectURL(url);}
 }
 form.addEventListener("submit",async event=>{
