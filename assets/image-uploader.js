@@ -115,7 +115,8 @@ form.addEventListener("submit",async event=>{
   data.append("artwork",prepared,prepared.name);
   say("Sending image to the Librium Saga submission inbox…");
   const r=await fetch("/upload-images/",{method:"POST",body:data,credentials:"same-origin",redirect:"follow"});
-  if(!r.ok)throw Error("The image could not be submitted (HTTP "+r.status+"). Check that Netlify Forms is enabled.");
+  if(r.status===404)throw Error("The site has not registered its upload form. Netlify site owner: open Forms, enable form detection, then redeploy. Until then, please send the artwork through ChatGPT instead.");
+  if(!r.ok)throw Error("Netlify rejected this image submission (HTTP "+r.status+").");
   say("Submission request sent for "+chosen.purpose+". If Netlify Forms is enabled, the artwork will appear in its inbox; it is not yet published on the website.","success");
   form.reset();file.value="";preview.style.display="none";
   if(previewURL)URL.revokeObjectURL(previewURL);previewURL=null;
