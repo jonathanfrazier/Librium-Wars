@@ -4,9 +4,19 @@
 const $=id=>document.getElementById(id);
 const form=$("artwork-form"),page=$("page"),slot=$("slot"),file=$("file"),publish=$("publish"),status=$("status"),preview=$("preview"),dest=$("destination"),openpage=$("openpage");
 let slots=[],chosen=null,previewURL=null,busy=false;
+const netlifyHost=location.hostname.endsWith(".netlify.app");
+if(!netlifyHost){
+  const banner=document.createElement("p");
+  banner.className="hint";
+  banner.style.cssText="background:#2d2330;border:1px solid #986f7b;padding:14px;border-radius:8px;color:#f4c7bd";
+  banner.textContent="This image form was built for Netlify and cannot receive files on Cloudflare Pages. Images already published in GitHub appear on this site. For new images, send your picture in the Librium Saga ChatGPT conversation until the Cloudflare image publisher is connected.";
+  form.parentNode.insertBefore(banner,form);
+  publish.disabled=true;
+  publish.textContent="Cloudflare uploads not connected";
+}
 function say(text,type){status.textContent=text;status.dataset.type=type||"";}
 function groupName(p){return p==="/"?"Homepage":p.replace(/^\//,"").replace(/\/$/,"").replaceAll("/"," → ");}
-function refresh(){publish.disabled=busy||!chosen||!file.files.length;}
+function refresh(){publish.disabled=!netlifyHost||busy||!chosen||!file.files.length;}
 function syncSlot(){
  chosen=slots.find(x=>x.id===slot.value)||null;
  $("slot-id").value=chosen?.id||"";
@@ -102,7 +112,7 @@ async function prepareImage(input){
 }
 form.addEventListener("submit",async event=>{
  event.preventDefault();
- if(!chosen||!file.files[0]||busy)return;
+ if(!netlifyHost||!chosen||!file.files[0]||busy)return;
  busy=true;refresh();
  try{
   say("Preparing artwork…");
