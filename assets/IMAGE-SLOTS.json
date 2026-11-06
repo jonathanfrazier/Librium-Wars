@@ -814,6 +814,15 @@
       "purpose": "Zironika-RX677 character portrait",
       "assetPath": null,
       "status": "awaiting-image"
+    },
+    {
+      "id": "character-tara-claude-portrait",
+      "page": "/characters/",
+      "purpose": "Tara Claude animated character portrait",
+      "assetPath": null,
+      "status": "approved-awaiting-batch-publication",
+      "imageSubject": "Tara Claude, Religious High Born, Claude bloodline",
+      "imageType": "User-supplied animated GIF (staged for batch publication)"
     }
   ],
   "characterPortraits": "Characters use portrait paths in characters/registry.json",
