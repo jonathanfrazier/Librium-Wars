@@ -126,15 +126,19 @@
       "id": "age-05-thumbnail",
       "page": "/ages/",
       "purpose": "Age 5 timeline preview",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/slots/age-05-thumbnail.webp",
+      "status": "published",
+      "imageSubject": "Dreamland Librium Day celebration in New York, uploaded for Age of Consent",
+      "imageType": "User-approved artwork"
     },
     {
       "id": "age-05-hero",
       "page": "/ages/age-of-consent/",
       "purpose": "Age 5 cover",
-      "assetPath": null,
-      "status": "awaiting-image"
+      "assetPath": "assets/images/slots/age-05-hero.webp",
+      "status": "published",
+      "imageSubject": "Dreamland Librium Day celebration in New York, uploaded for Age of Consent",
+      "imageType": "User-approved artwork"
     },
     {
       "id": "age-05-gallery",
