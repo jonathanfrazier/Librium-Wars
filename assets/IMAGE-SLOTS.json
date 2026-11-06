@@ -281,10 +281,11 @@
       "id": "being-miscreant",
       "page": "/social-orders/",
       "purpose": "miscreant portrait",
-      "assetPath": "assets/images/beings/miscreant-domestic-servant.avif",
+      "assetPath": "assets/images/slots/being-miscreant.webp",
       "status": "published",
-      "expectedAssetPath": "assets/images/beings/miscreant-domestic-servant.avif",
-      "imageSubject": "Approved female feline-variant engineered Miscreant portrait"
+      "expectedAssetPath": "assets/images/slots/being-miscreant.webp",
+      "imageSubject": "User-approved female feline variant Miscreant in black domestic service uniform",
+      "imageType": "User-supplied portrait"
     },
     {
       "id": "being-biobots",
