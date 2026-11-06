@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "characters": [
     {
       "id": "the-one",
@@ -194,6 +194,18 @@
       "references": [],
       "animationPrompts": [],
       "notesPath": "characters/NEW-CHARACTERS.md"
+    },
+    {
+      "id": "tara-claude",
+      "name": "Tara Claude",
+      "role": "Religious High Born · Claude bloodline",
+      "nation": "",
+      "status": "approved",
+      "summary": "A member of the Claude founding bloodline within the Religious High Born of the Elites.",
+      "portrait": null,
+      "modelFiles": [],
+      "references": [],
+      "animationPrompts": []
     }
   ]
 }
